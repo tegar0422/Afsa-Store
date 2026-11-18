@@ -812,8 +812,10 @@ body[data-halaman="login"] main.wadah {
   grid-template-columns: minmax(0, 1fr) 104px 96px;
   align-items: center;
   gap: 12px;
-  padding: 10px 14px;
+  padding: 10px 14px;       
 }
+
+
 
 .kasir-info {
   display: flex;
@@ -1231,104 +1233,111 @@ body[data-halaman="login"] main.wadah {
   margin-top: 16px;
 }
 
-/* ==========================================================================
-   8.  FOOTER
-   ========================================================================== */
 
-/* ===== FITUR TATA LETAK FOOTER ===== */
+/* ===== FOOTER ===== */
 .kaki {
-  padding: 28px 0 16px;
-  border-top: 3px solid var(--aksen);
-  background: var(--hijau-tua);
-  color: #d9c7b5;
-  font-size: 0.8rem;
+    margin-top: 48px;
+    padding: 40px 0 20px;
+    background: #1f2937;
+    color: #d1d5db;
+    font-size: 14px;
+    line-height: 1.6;
 }
 
 .kaki-kolom {
-  display: grid;
-  gap: 24px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 32px;
 }
 
-/* ===== FITUR LOGO FOOTER ===== */
 .kaki-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
-  color: var(--putih);
-  font-size: 1.1rem;
-  font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
 }
 
 .kaki-logo img {
-  width: 40px;
-  height: 40px;
-  border-radius: 9px;
-  background: var(--krem);
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-/* ===== FITUR JUDUL DAN DAFTAR INFORMASI FOOTER ===== */
+.kaki-logo-deskripsi,
+.kaki-info {
+    margin: 0;
+    color: #9ca3af;
+}
+
 .kaki-judul {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 10px;
-  color: var(--putih);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+    margin: 0 0 14px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
 }
 
-.kaki-judul::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--aksen);
+.kaki-daftar {
+    display: grid;
+    gap: 10px;
+    margin: 0 0 14px;
 }
 
-.kaki-daftar div {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 2px 0;
+.kaki-daftar dt {
+    color: #9ca3af;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
 }
 
 .kaki-daftar dd {
-  color: var(--putih);
-  font-weight: 600;
+    margin: 0;
+    color: #f3f4f6;
 }
 
-.kaki-info {
-  margin-top: 4px;
+.kaki-daftar a {
+    color: inherit;
+    text-decoration: none;
 }
 
-/* ===== FITUR METODE PEMBAYARAN FOOTER ===== */
+.kaki-daftar a:hover {
+    text-decoration: underline;
+}
+
 .kaki-bayar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 14px 0 0;
+    padding: 0;
+    list-style: none;
 }
 
 .kaki-bayar li {
-  padding: 4px 10px;
-  border-radius: 6px;
-  background: var(--krem);
-  color: var(--hijau-tua);
-  font-size: 0.7rem;
-  font-weight: 700;
+    padding: 4px 12px;
+    border: 1px solid #4b5563;
+    border-radius: 999px;
+    color: #f3f4f6;
+    font-size: 12px;
+    font-weight: 600;
 }
 
-/* ===== FITUR HAK CIPTA ===== */
 .kaki-hakcipta {
-  margin-top: 24px;
-  padding-top: 16px;
-  border-top: 1px solid #ffffff22;
-  color: #b09a88;
-  font-size: 0.75rem;
-  text-align: center;
+    margin: 32px 0 0;
+    padding-top: 16px;
+    border-top: 1px solid #374151;
+    color: #9ca3af;
+    font-size: 13px;
+    text-align: center;
+}
+
+/* Tablet & HP */
+@media (max-width: 800px) {
+    .kaki-kolom {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
 }
 
 /* ==========================================================================
@@ -1615,10 +1624,26 @@ body[data-halaman="sukses"] #halaman-sukses {
     grid-template-columns: 56px minmax(0, 1fr);
   }
 
-  .baris-aksi {
+    .baris-aksi {
     display: flex;
     grid-column: 1 / -1;
   }
+
+  /* Formulir checkout */
+  .baris-isian {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .kotak {
+    padding: 16px;
+  }
+
+  /* Footer */
+  .kaki-kolom {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
 }
 
   /* * Formulir checkout: isian tersusun ke bawah, kotak lebih ringkas */
@@ -1644,7 +1669,7 @@ body[data-halaman="sukses"] #halaman-sukses {
     height: 38px;
   }
 
-  .logo-name {
+  .logo-nama {
     font-size: 0.95rem;
   }
 
@@ -1741,8 +1766,9 @@ body[data-halaman="sukses"] #halaman-sukses {
 }
 
 .kaki-logo-deskripsi {
-    color: white;
+    color: var(--teks-redup);
 }
+
 .kaki-logo img {
     width: 55px;
     height: 55px;
@@ -1779,7 +1805,7 @@ body[data-halaman="sukses"] #halaman-sukses {
     margin-top: 10px;
 }
 
-.kaki-byar {
+.kaki-bayar {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -1787,7 +1813,7 @@ body[data-halaman="sukses"] #halaman-sukses {
     margin-top: 12px;
 }
 
-.kaki-byar li {
+.kaki-bayar li {
     color: white;
     background: #da3030;
     border: 1px solid var(--emas);
